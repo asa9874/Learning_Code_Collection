@@ -1,4 +1,4 @@
-public class hello {
+public class a1_ternary_operator {
     public static void main(String[] args){
         int a=5;
         int b=5;
