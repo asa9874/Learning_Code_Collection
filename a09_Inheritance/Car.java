@@ -1,4 +1,4 @@
-package a9_Inheritance;
+package a09_Inheritance;
 
 public class Car {
     int speed;

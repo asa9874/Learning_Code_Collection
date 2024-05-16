@@ -1,4 +1,4 @@
-package a6_Class_method;
+package a06_Class_method;
 
 public class a6_method {
     public static void main(String[] args){

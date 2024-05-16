@@ -1,4 +1,4 @@
-package a6_Class_method;
+package a06_Class_method;
 
 public class Calculator {
     int plus(int a, int b){

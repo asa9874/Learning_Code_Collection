@@ -1,4 +1,4 @@
-package a9_Inheritance;
+package a09_Inheritance;
 
 public class a9 {
     public static void main(String[] args){

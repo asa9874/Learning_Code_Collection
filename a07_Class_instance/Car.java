@@ -1,4 +1,4 @@
-package a7_Class_instance;
+package a07_Class_instance;
 
 public class Car {
 

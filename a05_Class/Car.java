@@ -1,4 +1,4 @@
-package a5_Class;
+package a05_Class;
 
 public class Car {
     String name="슈퍼멋진차";

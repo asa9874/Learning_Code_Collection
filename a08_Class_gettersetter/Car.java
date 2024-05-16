@@ -1,4 +1,4 @@
-package a8_Class_gettersetter;
+package a08_Class_gettersetter;
 
 public class Car {
     private int speed;
