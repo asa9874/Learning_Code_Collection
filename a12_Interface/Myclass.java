@@ -3,9 +3,9 @@ package a12_Interface;
 public class Myclass {
     RemoteCotrol rc;
     Myclass(Television tv){
-        System.out.println("tv");
+        tv.Turn_on();
     }
     Myclass(Computer com){
-        System.out.println("computer");
+        com.Turn_on();
     }
 }
