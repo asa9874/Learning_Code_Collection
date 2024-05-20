@@ -11,8 +11,8 @@ public class a17 {
         //String a="a11";
         //System.out.println(Integer.parseInt(a));
 
-        Parent parent = new Parent();
-        Child child = (Child) parent;
+        //Parent parent = new Parent();
+        //Child child = (Child) parent;
     }
 }
 
