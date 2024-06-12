@@ -1,0 +1,29 @@
+<style>
+    .square{
+        height: 100px;
+        width: 100px;
+        background-color: aqua;
+        transition-property: height, background-color;
+        transition-duration:0.5s,3s;
+        float: left;
+    }
+    div.square:nth-child(1){transition-timing-function: ease;}
+    .square:nth-child(2){transition-timing-function: linear;}
+    .square:nth-child(3){transition-timing-function: ease-in;}
+    .square:nth-child(4){transition-timing-function: ease-out;}
+    .square:nth-child(5){transition-timing-function: ease-in-out;}
+
+    
+    .square:hover{
+        background-color: red;
+        height: 150px;
+        transition-delay: 0.2s;
+    }
+</style>
+
+<div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+</div>

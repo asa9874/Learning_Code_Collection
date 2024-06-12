@@ -1,0 +1,53 @@
+<script>
+    function fun1(){
+        document.write(document.getElementById('aa').textContent+"나")
+    }
+
+    function fun2(){
+        document.write(document.querySelector('.testclass').textContent+"니")
+    }
+
+    function fun3(){
+        const ele=document.getElementsByClassName('test2')
+        for(let i=0; i < ele.length; i++){
+            ele[i].textContent="으"
+        }
+
+    }
+    
+    function fun4(){
+        const ele=document.getElementsByTagName('a')
+        for(let i=0; i < ele.length; i++){
+            ele[i].textContent="으"
+        }
+
+    }
+
+    function fun5(){
+        const ele=document.querySelectorAll('a')
+        for(let i=0; i < ele.length; i++){
+            ele[i].textContent="으"
+        }
+
+    }
+
+</script>
+
+<a id="aa" class="testclass">나</a>
+<button onclick="fun1()">버1</button>
+<button onclick="fun2()">버2</button>
+
+
+<a class="test2">안</a>
+<a class="test2">녕</a>
+
+<button onclick="fun3()">버3</button>
+<button onclick="fun4()">버4</button>
+<button onclick="fun5()">버5</button>
+
+
+
+
+
+
+

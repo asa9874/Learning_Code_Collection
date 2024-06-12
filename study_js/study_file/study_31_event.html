@@ -1,0 +1,32 @@
+
+<button onclick="bu1()">버튼</button>
+<button class="newbtn1">버튼2</button>
+<button class="newbtn2">버튼3</button>
+<script>
+    function bu1(){alert("안녕?");}
+    const btn=document.querySelector('.newbtn1');
+    btn.onclick=function(){alert("안녕하세요?")}
+    
+    const btn2=document.querySelector('.newbtn2')
+    btn2.addEventListener('click',function(){alert("안녕하세요")})
+</script>
+
+
+
+<button class="newbtn3">버튼4</button>
+
+<script>
+    function hide(e){//e는 이벤트 객체다.
+        e.target.style.visibility='hidden';//e.target 대신 this를 사용할수도있다.
+        //this.style.visibility='hidden';
+    }
+
+    document.getElementsByClassName('.newbtn3').addEventListener('click',hide);
+</script>
+
+
+
+
+
+
+

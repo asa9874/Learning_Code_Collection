@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<style>
+    company a:link{color: blue;}
+    company a:visited{color: red;}
+    company a:hover{color: yellow;}
+    company a:active{color:blueviolet;}
+    company a:focus{color:aqua;}
+
+    input:enabled + span{color: blue;}
+    input:checked + span{color: violet;}
+    input:disabled + span{color: red;}
+    
+    what a:first-child{color: red;}
+    what a:last-child{color: blue;}
+    what a:nth-child(3){color: aquamarine;}
+    what a:nth-last-child(2){color:blueviolet;}
+
+
+    how p:first-of-type  { color: red; }
+    how p:last-of-type   { color: blue; }
+    how p:nth-of-type(2) { color: green; }
+    how p:nth-last-of-type(2) { color: orange;}
+
+    nono p:not([class="no"]){color: blue;}
+
+</style>
+
+
+<body>
+    <company><a href="https://www.google.com/">링크</a></company>
+
+    <input type="radio" checked="checked" name="gender"><span>1번</span><br>
+    <input type="radio" name="gender"><span>2번</span><br>
+    <input type="radio" disabled name="gender"><span>3번</span><br>
+    
+    <what>
+        <a>1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>4</a>
+        <a>5</a>
+        <a>6</a>
+        <a>7</a>
+    </what>
+
+    <how>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+    </how>
+
+    <nono>
+        <p class="no">노</p>
+        <p >예스예스</p>
+    </nono>
+
+
+</body>

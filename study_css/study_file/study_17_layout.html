@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        background-color:wheat;
+    }
+
+    header{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: gray;
+        height: 100px;
+        width: 100%;
+        z-index: 100px;
+        box-shadow: 0 3px 3px black ;
+        position:fixed;
+        top: 0;
+    }
+    #wrap{
+        margin-top: 100px;
+    }
+
+    .logo img{
+        height: 100px;
+    }
+
+    nav{
+        float: right;
+    }
+
+    .nav-items > li{
+        display: inline-block;
+        line-height: 50px;
+        padding: 0 50px;
+        color: black;
+        text-shadow: 1px 1px white;
+        font-size: large;
+    }
+
+    .nav-items > li:hover{
+        color: blue;
+    }
+    
+    /*Section 부분 시작*/
+    #content-wrap:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    aside{
+        position: fixed;
+        width: 20%;
+        height: 100%;
+        background-color:rgb(26, 22, 22);
+        color: white;
+    }
+
+    section{
+        float: right;
+        width: 80%;
+    }
+
+    .aside-items > li:hover{color: blue;}
+
+    article{
+        padding: 10px 10px;
+        margin: 10px 10px;
+        background-color: white;
+    }
+
+
+
+
+
+
+    /*footer 부분 시작*/
+    footer{
+        position: absolute;
+        height: 60px;
+        width: 100%;
+        padding: 0 25px;
+        line-height: 60px;
+        color: black;
+        border-top: 1px solid black;
+        background-color: whitesmoke;
+    }
+    
+
+</style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <a class="logo" href="#home">
+                <img src="https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif">
+            </a>
+            <nav>
+                <ul class="nav-items">
+                    <li><a>메뉴1</a></li>
+                    <li><a>메뉴2</a></li>
+                    <li><a>메뉴3</a></li>
+                    <li><a>메뉴4</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!--Section 부분 시작-->
+    <div id="content-wrap">
+        <aside>
+            <h1>Aside</h1>
+            <ul class="aside-items">
+                <li><a>부가정보1</a></li>
+                <li><a>부가정보2</a></li>
+                <li><a>부가정보3</a></li>
+                <li><a>부가정보4</a></li>
+            </ul>
+        </aside>
+
+
+        <section>
+            <article id="article1">
+                <h1>기사1</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a convallis sem. Vestibulum interdum, libero ac maximus gravida, massa metus luctus nunc, at semper urna leo vitae justo. Pellentesque a rhoncus turpis. Quisque eleifend diam eu mauris porttitor facilisis at et mauris. Ut egestas lacinia volutpat. Nulla placerat mattis elit, eget hendrerit nisl ornare quis. Integer non magna et neque tincidunt tincidunt.
+
+                    Proin elit orci, tempus eu turpis aliquam, scelerisque efficitur est. Nulla blandit magna a libero luctus, in lobortis elit lobortis. Nunc ornare lectus non leo laoreet, ac pellentesque sem lacinia. Duis rutrum sed ante eget iaculis. Phasellus eget massa non ipsum egestas ullamcorper. Integer sed dui elit. Etiam ut justo felis. Mauris vel fringilla magna. Etiam lorem sapien, cursus in molestie in, ultrices ut purus.
+                    
+                    Cras at odio vitae eros vehicula egestas rhoncus ut ex. Curabitur imperdiet erat sed diam malesuada, ac laoreet erat volutpat. Duis imperdiet eu felis elementum venenatis. Pellentesque vestibulum nibh id sodales scelerisque. Cras posuere sed mauris vel euismod. Aliquam erat volutpat. Praesent hendrerit dolor libero, a pretium urna porta sed. Nulla ultrices venenatis tortor, sit amet varius dui tempor in. Suspendisse at ultricies dui, eget venenatis diam. Suspendisse potenti. Nunc condimentum leo id tristique pulvinar. Integer semper lacinia elementum. Duis tristique venenatis nisi vitae vulputate. Nullam lacus tellus, iaculis id ante a, luctus mollis lorem.
+                    
+                    Curabitur vulputate ipsum orci, vel luctus elit lacinia non. Cras a posuere sapien, id interdum justo. Nulla facilisi. Praesent urna erat, consequat non erat a, elementum tristique risus. Sed blandit ligula ac ultricies pretium. Phasellus mi tortor, dapibus tincidunt vulputate in, auctor in magna. Praesent rhoncus erat orci, at efficitur ligula viverra id.
+                    
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat, mi at pellentesque finibus, justo sapien accumsan est, placerat hendrerit metus ante sit amet turpis. Phasellus elementum magna sapien, et convallis odio dapibus non. Suspendisse vel pharetra nisl. Etiam porttitor dolor a venenatis viverra. Duis sapien est, fermentum a purus quis, ultrices vulputate lectus. Sed elementum nunc ex, et maximus tellus vehicula et. Vestibulum vitae tortor nibh. Integer ac est ut sem suscipit elementum. Morbi vulputate tellus magna, ut efficitur mauris vestibulum eu. Maecenas vitae pulvinar purus, id ullamcorper justo. Fusce ornare malesuada nisl, at scelerisque libero egestas vel.</p>
+            </article>
+            <article id="article2">
+                <h1>기사2</h1>
+                <p>기사2 내용</p>
+            </article>
+            <article id="article3">
+                <h1>기사3</h1>
+                <p>기사3 내용</p>
+            </article>
+            <article id="article4">
+                <h1>기사4</h1>
+                <p>기사4 내용</p>
+            </article>
+        </section>
+
+
+
+    </div>
+
+    <!--footer-->
+    <div>
+        <footer>여기에 발자국을 남기다</footer>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
