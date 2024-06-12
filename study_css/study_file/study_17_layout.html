@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
     *{
         margin: 0;
         padding: 0;
@@ -12,9 +14,6 @@
     }
 
     header{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
         background-color: gray;
         height: 100px;
         width: 100%;
@@ -74,6 +73,8 @@
         padding: 10px 10px;
         margin: 10px 10px;
         background-color: white;
+        width: 45%;
+        float: left;
     }
 
 
@@ -93,6 +94,39 @@
         background-color: whitesmoke;
     }
     
+
+
+
+    /* for tablet: ~ 800px */
+    @media screen and (max-width: 800px) {
+        header{
+            height: 120px;
+            text-align: center;
+        }
+        #wrap{
+            margin-top: 120px;
+        }
+
+        aside{
+            top:120px
+        }
+        .logo img{height: 50px;}
+        nav{
+            float: none;
+        }
+        article{
+            
+            width: 100%;
+            float: none;
+        }
+        
+
+
+
+    }
+
+    /* for smartphone: ~ 480px */
+    @media screen and (max-width: 480px) {}
 
 </style>
 </head>
@@ -142,7 +176,15 @@
             </article>
             <article id="article2">
                 <h1>기사2</h1>
-                <p>기사2 내용</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a convallis sem. Vestibulum interdum, libero ac maximus gravida, massa metus luctus nunc, at semper urna leo vitae justo. Pellentesque a rhoncus turpis. Quisque eleifend diam eu mauris porttitor facilisis at et mauris. Ut egestas lacinia volutpat. Nulla placerat mattis elit, eget hendrerit nisl ornare quis. Integer non magna et neque tincidunt tincidunt.
+
+                    Proin elit orci, tempus eu turpis aliquam, scelerisque efficitur est. Nulla blandit magna a libero luctus, in lobortis elit lobortis. Nunc ornare lectus non leo laoreet, ac pellentesque sem lacinia. Duis rutrum sed ante eget iaculis. Phasellus eget massa non ipsum egestas ullamcorper. Integer sed dui elit. Etiam ut justo felis. Mauris vel fringilla magna. Etiam lorem sapien, cursus in molestie in, ultrices ut purus.
+                    
+                    Cras at odio vitae eros vehicula egestas rhoncus ut ex. Curabitur imperdiet erat sed diam malesuada, ac laoreet erat volutpat. Duis imperdiet eu felis elementum venenatis. Pellentesque vestibulum nibh id sodales scelerisque. Cras posuere sed mauris vel euismod. Aliquam erat volutpat. Praesent hendrerit dolor libero, a pretium urna porta sed. Nulla ultrices venenatis tortor, sit amet varius dui tempor in. Suspendisse at ultricies dui, eget venenatis diam. Suspendisse potenti. Nunc condimentum leo id tristique pulvinar. Integer semper lacinia elementum. Duis tristique venenatis nisi vitae vulputate. Nullam lacus tellus, iaculis id ante a, luctus mollis lorem.
+                    
+                    Curabitur vulputate ipsum orci, vel luctus elit lacinia non. Cras a posuere sapien, id interdum justo. Nulla facilisi. Praesent urna erat, consequat non erat a, elementum tristique risus. Sed blandit ligula ac ultricies pretium. Phasellus mi tortor, dapibus tincidunt vulputate in, auctor in magna. Praesent rhoncus erat orci, at efficitur ligula viverra id.
+                    
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat, mi at pellentesque finibus, justo sapien accumsan est, placerat hendrerit metus ante sit amet turpis. Phasellus elementum magna sapien, et convallis odio dapibus non. Suspendisse vel pharetra nisl. Etiam porttitor dolor a venenatis viverra. Duis sapien est, fermentum a purus quis, ultrices vulputate lectus. Sed elementum nunc ex, et maximus tellus vehicula et. Vestibulum vitae tortor nibh. Integer ac est ut sem suscipit elementum. Morbi vulputate tellus magna, ut efficitur mauris vestibulum eu. Maecenas vitae pulvinar purus, id ullamcorper justo. Fusce ornare malesuada nisl, at scelerisque libero egestas vel.</p>
             </article>
             <article id="article3">
                 <h1>기사3</h1>
