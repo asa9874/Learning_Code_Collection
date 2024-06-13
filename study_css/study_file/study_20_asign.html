@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .containerz{
+            background-color: aqua;
+            padding: 40px;
+            margin: 10px;
+        }
+
+        .items{
+            padding: 30px;
+            margin: 10px;
+            background-color: violet;
+            width: 10px;
+        }
+
+        .inlinealign{text-align: center;}
+        .blockalign{display: inline-block;}
+        .flex{display: flex; justify-content: center;}
+        .flexcenter{display: flex; justify-content: center; align-items: center;}
+        .flexcol{flex-direction: column;}
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="containerz">
+        <a class="items">1</a>
+        <a class="items">2</a>
+        <a class="items">3</a>
+    </div>
+
+    inline요소
+    <div class="containerz inlinealign">
+        <a class="items">1</a>
+        <a class="items">2</a>
+        <a class="items">3</a>
+    </div>
+
+    블록요소
+    <div class="containerz inlinealign">
+        <div class="items blockalign">1</div>
+        <div class="items blockalign">2</div>
+        <div class="items blockalign">3</div>
+    </div>
+
+    flex
+    <div class="containerz flex">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+    </div>
+
+
+
+    <div class="containerz flex flexcol ">
+        <a class="items">1</a>
+        <a class="items">2</a>
+        <a class="items">3</a>
+    </div>
+
+    <div class="containerz flex flexcol">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+    </div>
+
+
+    <div class="containerz flexcenter" style="height: 500px;">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+    </div>
+
+
+
+
+</body>
+</html>
