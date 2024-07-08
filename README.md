@@ -1,4 +1,4 @@
-<h1>HTML,CSS,JavaScript 학습 코드 정리</h1>
+<h1>HTML,CSS,JavaScript 학습 코드 정리(2024.06)</h1>
 
 <h3>🌰HTML</h3>
 https://asa9874.tistory.com/category/FrontEnd/html
