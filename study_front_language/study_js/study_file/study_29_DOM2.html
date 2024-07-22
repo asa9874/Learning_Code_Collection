@@ -1,0 +1,44 @@
+<script>
+    function bu1(){
+        const ele=document.querySelector('a')
+        document.write(ele.nodeName+"<br>")//A
+        document.write(ele.nodeType+"<br>")//1(Element node)
+        document.write(ele.nodeValue+"<br>")//Null
+
+        const ele2=ele.firstChild
+        document.write(ele2.nodeName+"<br>")//#text
+        document.write(ele2.nodeType+"<br>")//3
+        document.write(ele2.nodeValue+"<br>")//안녕하세요
+
+    }
+
+
+    function bu2(){
+        const ele=document.querySelector('a')
+        ele.className="newclass"
+        ele.classList.add("new2class")
+        ele.id='heading'
+        ele.setAttribute("newattri","123")
+        ele.hasAttribute("newattri")
+        ele.getAttribute("newattri")
+        ele.removeAttribute("newattri")
+        ele.style.color="blue"
+        
+    }
+
+    
+
+
+
+
+
+
+
+
+</script>
+
+
+
+<a style="color: red;">안녕하세요</a>
+<button onclick="bu1()">눌러</button>
+<button onclick="bu2()">눌러</button>
