@@ -1,3 +1,3 @@
 
 const fun1= x => x*x;
-document.write(fun1(5))
+console.log(fun1(5))
