@@ -5,11 +5,16 @@ const fs = require('fs');
 const template = require('./lib/template.js');
 const path = require('path');
 const sanitizeHtml = require('sanitize-html');
+const bodyParser =require('body-parser');
+const compression=require('compression');
+
 var qs = require('querystring');
 
 // 포트 설정
 const port = 3000;
 
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(compression());
 // 기본 라우트 설정
 app.get('/', (request, response) => {
   fs.readdir('./data', function(error, filelist){
@@ -40,8 +45,8 @@ app.get('/page/:pageId', (request, response) => {
       var html = template.HTML(sanitizedTitle, list,
         `<h2>${sanitizedTitle}</h2>${sanitizedDescription}`,
         ` <a href="/create">create</a>
-          <a href="/update?id=${sanitizedTitle}">update</a>
-          <form action="delete_process" method="post">
+          <a href="/update/${sanitizedTitle}">update</a>
+          <form action="/delete_process" method="post">
             <input type="hidden" name="id" value="${sanitizedTitle}">
             <input type="submit" value="delete">
           </form>`
@@ -51,7 +56,7 @@ app.get('/page/:pageId', (request, response) => {
   });
 });
 
-
+//제작 폼
 app.get('/create',function(request,response){
   fs.readdir('./data', function(error, filelist){
     var title = 'WEB - create';
@@ -71,21 +76,77 @@ app.get('/create',function(request,response){
   });
 })
 
+
+//제작 POST
 app.post('/create_process',function(request,response){
-  var body = '';
-  request.on('data', function(data){
-      body = body + data;
-  });
-  request.on('end', function(){
-      var post = qs.parse(body);
-      var title = post.title;
-      var description = post.description;
-      fs.writeFile(`data/${title}`, description, 'utf8', function(err){
-        response.writeHead(302, {Location: `/?id=${title}`});
-        response.end();
-      })
-  });
+  var post =  request.body
+  var title = post.title;
+  var description = post.description;
+  fs.writeFile(`data/${title}`, description, 'utf8', function(err){
+    response.writeHead(302, {Location: `/?id=${title}`});
+    response.end();
+  })
 })
+
+
+
+
+//수정폼
+app.get('/update/:pageId',function(request,response){
+  fs.readdir('./data', function(error, filelist){
+    var filteredId = path.parse(request.params.pageId).base;
+    fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
+      var title =request.params.pageId;
+      var list = template.list(filelist);
+      var html = template.HTML(title, list,
+        `
+        <form action="/update_process" method="post">
+          <input type="hidden" name="id" value="${title}">
+          <p><input type="text" name="title" placeholder="title" value="${title}"></p>
+          <p>
+            <textarea name="description" placeholder="description">${description}</textarea>
+          </p>
+          <p>
+            <input type="submit">
+          </p>
+        </form>
+        `,
+        `<a href="/create">create</a> <a href="/update?id=${title}">update</a>`
+      );
+      response.send(html);
+    });
+  });
+});
+
+
+//수정 POST
+app.post('/update_process',function(request,response){
+  var post = request.body;
+  var id = post.id;
+  var title = post.title;
+  var description = post.description;
+  fs.rename(`data/${id}`, `data/${title}`, function(error){
+    fs.writeFile(`data/${title}`, description, 'utf8', function(err){
+      response.redirect(`/?id=${title}`);
+    })
+  });
+});
+
+
+//삭제 POST
+app.post('/delete_process',function(request,response){
+  var post = request.body;
+  var id = post.id;
+  var filteredId = path.parse(id).base;
+  fs.unlink(`data/${filteredId}`, function(error){
+    response.redirect('/');
+  })
+})
+
+
+
+
+
 
 
 // 서버 시작
