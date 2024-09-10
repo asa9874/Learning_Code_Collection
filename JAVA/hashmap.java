@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class hashmap {
     public static void main(String[] args) {
-        HashMap<String,String> map1 = new HashMap<>();
+        HashMap<String1,String1> map1 = new HashMap<>();
         map1.put("asd", "qqq");
         map1.get("asd");
         map1.remove("asd");
@@ -14,8 +14,8 @@ public class hashmap {
 
         if(map1.isEmpty()){};
         map1.clear();
-        Set<String> keys= map1.keySet();
-        Collection<String> values = map1.values();
+        Set<String1> keys= map1.keySet();
+        Collection<String1> values = map1.values();
         map1.putIfAbsent("orange", "asd");
         map1.replace("orange", "asd");
     }
