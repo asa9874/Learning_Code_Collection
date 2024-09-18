@@ -8,6 +8,7 @@ module.exports = {
       <meta charset="utf-8">
     </head>
     <body>
+      <a href="/auth/login">Login</a>
       <h1><a href="/">WEB</a></h1>
       ${list}
       ${control}
