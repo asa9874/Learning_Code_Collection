@@ -3,7 +3,7 @@ var router = express.Router();
 var template = require('../lib/template.js');
 var auth = require('../lib/auth.js')
 router.get('/', function (request, response) {
- 
+  console.log('/',request.user);
   var title = 'Welcome';
   var description = 'Hello, Node.js';
   var list = template.list(request.list);
