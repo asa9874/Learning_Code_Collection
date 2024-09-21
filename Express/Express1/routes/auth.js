@@ -40,9 +40,16 @@ router.post('/login_process', function (request, response) {
 });
 */
 router.get('/logout', function (request, response) {
-  request.session.destroy(function(err){
-    response.redirect('/');
-  })
+  // request.session.destroy(function(err){
+  //   response.redirect('/');
+  // })
+  request.logout(function(err) {
+    if (err) { return next(err); }
+    // 로그아웃이 성공하면 여기서 처리
+    request.session.destroy(function(err){
+      response.redirect('/');
+    })
+  });
 });
 
 
