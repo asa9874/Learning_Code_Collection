@@ -7,6 +7,7 @@ var helmet = require('helmet')
 app.use(helmet());
 var session = require('express-session');
 var FileStore = require('session-file-store')(session)
+var flash = require('connect-flash');
 
 var indexRouter = require('./routes/index');
 var topicRouter = require('./routes/topic');
@@ -22,25 +23,27 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+app.use(flash());
+
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
-var authData={
-  email:"qqq",
-  password:"111",
-  nickname:"qqqq",
+var authData = {
+  email: "qqq",
+  password: "111",
+  nickname: "qqqq",
 }
 app.use(passport.initialize());
 app.use(passport.session());
 
 
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user.email);
 });
 
-passport.deserializeUser(function(id, done) {
-    done(null, authData);
+passport.deserializeUser(function (id, done) {
+  done(null, authData);
 });
 
 
@@ -53,17 +56,19 @@ passport.use(new LocalStrategy(
   },
   function (username, password, done) {
     console.log('LocalStrategy', username, password);
-    if(username === authData.email && password === authData.password){
+    if (username === authData.email && password === authData.password) {
       console.log("성공")
-      return done(null, authData);
-      
+      return done(null, authData, {
+        message: 'Welcome.'
+      });
+
     }
-    else{
+    else {
       console.log("실패")
       return done(null, false, {
         message: 'Incorrect.'
       });
-      
+
     }
   }
 ));
@@ -72,7 +77,9 @@ passport.use(new LocalStrategy(
 app.post('/auth/login_process',
   passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/auth/login'
+    failureRedirect: '/auth/login',
+    failureFlash:true,
+    successFlash:true
   }));
 
 app.get('*', function (request, response, next) {
