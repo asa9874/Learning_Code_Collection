@@ -10,7 +10,6 @@ var template = require('../lib/template.js');
 
 router.get('/login', function (request, response) {
   var fmsg=request.flash();
-  console.log(fmsg,"sda")
   var feedback='';
   if(fmsg.error){
     feedback=fmsg.error[0];
